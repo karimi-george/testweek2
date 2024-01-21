@@ -42,34 +42,26 @@ function countVowels(sentence) {
   const readline = require("readline");
 
   ANS:
+const prompt = require("prompt-sync")(); // Create a synchronous prompt instance
 
-function calculateSum(inputString) {
+function calculateSum() {
+  let numbersString = prompt("Enter numbers separated by commas:");
+  let numbersArray = numbersString.split(",");
+
+  // Convert each string number to a numerical value
+  let parsedNumbers = numbersArray.map(Number);
+
+  // Calculate the sum of the numbers
+  let sum = parsedNumbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+  // Print the sum
+  console.log("The sum of the numbers is:", sum);
 }
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+calculateSum();
 
-function promptUser() {
-}
 
-promptUser()
-  .then((userInput) => {
-    return calculateSum(userInput);
-  })
-  .then((result) => {
-    console.log("Sum of the entered numbers:", result);
-  })
-  .catch((error) => {
-    console.error(error);
-  })
-  .finally(() => {
-    rl.close();
-  });
-
- 4.
-PALINDROME –A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward  
+4.  PALINDROME –A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward  
 Write a program that checks whether a word is a palindrome or not.  
 Examples of a palindromes  
 (race car) ?
